@@ -2,26 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: var(--font-inter);
+  @apply text-sm text-black/70 dark:text-white/70;
+}
+
+.c-cta {
+  @apply h-11 bg-black dark:bg-white dark:text-black font-medium rounded-full gap-2 p-2 px-8 whitespace-nowrap text-white flex justify-center items-center min-w-[100px] shadow-csm hover:shadow-cmd transition-all;
+}
+
+.c-btn {
+  @apply h-7 bg-black font-medium rounded-full gap-2 p-2 px-6 whitespace-nowrap text-white flex justify-center items-center text-sm min-w-[100px] shadow-csm hover:shadow-cmd transition-all;
+}
+
+.c-container {
+  @apply max-w-[1200px] mx-auto px-5 md:px-6 lg:px-8;
+}
+
+.c-container-sm {
+  @apply max-w-[800px] mx-auto px-5 md:px-6 lg:px-8;
+}
+
+.c-border {
+  @apply border border-white/15;
+}
+
+.gallery {
+  height: 80vh;
+  overflow: hidden;
+  background: #eaeaea;
+}
+
+.gallery .galleryWrapper {
+  position: relative;
+  top: -10vh;
+  height: 100vh;
+}
+
+.circle {
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0px 60px 50px rgba(0, 0, 0, 0.748);
 }
