@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 import { Inter, Fahkwang, JetBrains_Mono } from "next/font/google";
 import RootProvider from "@/layouts/RootProvider";
 
