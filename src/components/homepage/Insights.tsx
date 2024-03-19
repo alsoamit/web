@@ -17,11 +17,8 @@ export default function Insights() {
 
   return (
     <>
-      <div
-        className="c-container space-y-16 flex justify-center py-24 items-center flex-col gap-8"
-        ref={gallery}
-      >
-        <h2 className="text-center text-5xl font-bold font-heading">
+      <div className="c-container space-y-16  py-24" ref={gallery}>
+        <h2 className="text-left text-5xl font-bold font-heading text-white">
           Insights
         </h2>
         <div className="grid grid-cols-3 gap-12">

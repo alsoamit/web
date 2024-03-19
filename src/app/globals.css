@@ -12,7 +12,7 @@ body {
 }
 
 .c-btn {
-  @apply h-7 bg-black font-medium rounded-full gap-2 p-2 px-6 whitespace-nowrap text-white flex justify-center items-center text-sm min-w-[100px] shadow-csm hover:shadow-cmd transition-all;
+  @apply h-9 bg-black dark:bg-white font-medium rounded-full gap-2 p-2 px-6 whitespace-nowrap text-white dark:text-black flex justify-center items-center text-sm min-w-[100px] shadow-csm hover:shadow-cmd transition-all;
 }
 
 .c-container {

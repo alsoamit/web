@@ -9,7 +9,7 @@ export default function Cta({ children, icon, ...props }: ICtaProps) {
   return (
     <button className="c-cta" {...props}>
       {children}
-      <ArrowUpRightIcon className="h-5 w-5" />
+      {icon ? icon : <ArrowUpRightIcon className="h-5 w-5" />}
     </button>
   );
 }
