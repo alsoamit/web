@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRightIcon } from "@heroicons/react/16/solid";
+import { ArrowLongRightIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import React, { useRef } from "react";
@@ -20,11 +20,6 @@ export default function Insights() {
 
   return (
     <>
-      {/* <div className="gap-x-2 flex bg-[#121316]">
-        {Array.from(Array(60).keys()).map((i) => (
-          <div key={i} className="h-2 w-2 bg-black"></div>
-        ))}
-      </div> */}
       <div className="border-t-4 border-dashed border-black bg-[#121316]"></div>
       <div className="c-container space-y-8 py-24" ref={gallery}>
         <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
@@ -36,42 +31,81 @@ export default function Insights() {
           obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
           Inventore, ipsa dolorem.
         </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 py-8">
-          <InsightsCard y={y} />
-          <InsightsCard y={y2} />
-          <InsightsCard y={y3} />
+        <div className="gap-12 py-8 flex flex-col md:flex-row">
+          <InsightsCard y={y} large />
+          <div className="flex md:flex-1 flex-col sm:flex-row md:flex-col gap-12 md:gap-8">
+            <InsightsCard y={y2} />
+            <InsightsCard y={y3} />
+          </div>
         </div>
       </div>
-      <div className="flex justify-center">
-        <Button>Read More</Button>
-      </div>
-      <motion.div className="relative mt-[100px]" style={{ height }}>
+      <motion.div
+        className="relative mt-[100px] overflow-x-clip"
+        style={{ height }}
+      >
         <motion.div className="circle absolute z-10 h-[1550%] w-[120%] bg-white dark:bg-[#121316] left-[-10%]"></motion.div>
       </motion.div>
     </>
   );
 }
 
-function InsightsCard({ y }: { y: MotionValue }) {
+function InsightsCard({
+  y,
+  large = false,
+}: {
+  y: MotionValue;
+  large?: boolean;
+}) {
   return (
-    <motion.div style={{ y }} className="space-y-4">
+    <motion.div
+      style={{ y }}
+      className={`space-y-4 ${large ? "md:col-span-2 md:flex-[2]" : "md:space-y-2"}`}
+    >
       <motion.img
         src="https://images.unsplash.com/photo-1680536555364-9dd4a1ab313e?q=80&w=2664&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
-        className="w-full h-60 object-cover"
+        className={`w-full object-cover h-60 ${large ? "sm:h-96" : "md:h-60"}`}
       />
       <h3 className="text-white font-semibold text-lg font-mono">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus?
       </h3>
-      <p>
+      <p className={large ? "" : "md:hidden"}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam
         repellendus deleniti labore, quae optio ducimus a magnam autem corrupti
         aliquam illo, animi expedita sit ipsa!
       </p>
-      <Link href={"#"} className="flex items-center gap-2 text-base pt-5">
-        Read More
-        <ArrowRightIcon className="h-4" />
-      </Link>
+      <div className={`hidden space-y-4 ${large ? "md:block" : ""}`}>
+        <p className="max-w-2xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+          voluptatum libero sequi debitis inventore cumque aspernatur quaerat
+          obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
+          Inventore, ipsa dolorem.
+        </p>
+        <p className="max-w-2xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+          voluptatum libero sequi debitis inventore cumque aspernatur quaerat
+          obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
+          Inventore, ipsa dolorem.
+        </p>
+        <p className="max-w-2xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
+          voluptatum libero sequi debitis inventore cumque aspernatur quaerat
+          obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
+          obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
+          Inventore, ipsa dolorem.
+        </p>
+      </div>
+      {large ? (
+        <div className="pt-8 flex gap-3">
+          <Button>Read More</Button>
+          {/* <Button>View All</Button> */}
+        </div>
+      ) : (
+        <Link href={"#"} className="flex items-center gap-2 text-base pt-5">
+          Read More
+          <ArrowLongRightIcon className="h-5" />
+        </Link>
+      )}
     </motion.div>
   );
 }

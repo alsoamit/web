@@ -2,6 +2,7 @@
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
 import React, { useRef } from "react";
 import Button from "../buttons/Button";
+import { IWorkItem, work } from "@/config/work.config";
 
 export default function Work() {
   return (
@@ -10,8 +11,8 @@ export default function Work() {
         <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
           Work
         </h2>
-        {Array.from(Array(3).keys()).map((i) => (
-          <WorkCard key={i} />
+        {work.map((i) => (
+          <WorkCard key={i.id} data={i} />
         ))}
       </div>
     </div>
@@ -55,7 +56,9 @@ function TechStackCard({
   );
 }
 
-function WorkCard() {
+function WorkCard({ data }: { data: IWorkItem }) {
+  const { title, description, thumbnail, cta } = data;
+
   const container = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -64,14 +67,12 @@ function WorkCard() {
   });
 
   const y = useTransform(scrollYProgress, [0, 0.4], [200, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.45], [0.65, 1]);
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 40]);
   const rotaterev = useTransform(scrollYProgress, [0, 1], [0, -40]);
   const rotate2 = useTransform(scrollYProgress, [0, 1], [220, 260]);
   const rotate2rev = useTransform(scrollYProgress, [0, 1], [120, 80]);
   const rotate3 = useTransform(scrollYProgress, [0, 1], [-80, -120]);
   const rotate3rev = useTransform(scrollYProgress, [0, 1], [180, 200]);
-  const y3 = useTransform(scrollYProgress, [0, 0.45], [-80, 0]);
 
   return (
     <div
@@ -94,25 +95,24 @@ function WorkCard() {
       </div>
 
       <div className="p-6 z-10 pt-12 md:pt-16 space-y-5">
-        <h2 className="text-3xl font-mono text-white font-semibold">
-          Syneurgy
-        </h2>
-        <p className="max-w-xs">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae
-          dolores incidunt perspiciatis animi porro accusantium quidem, beatae
-          id, rem aperiam qui facilis vero aut temporibus reprehenderit omnis
-          suscipit quos? Voluptate?
-        </p>
+        <h2 className="text-3xl font-mono text-white font-semibold">{title}</h2>
+        <p className="max-w-xs">{description}</p>
         <div className="pt-4">
-          <Button>View Project</Button>
+          <Button>{cta.content}</Button>
         </div>
       </div>
       <div className="z-10 md:col-span-2">
         <motion.div className="md:pr-6 mt-4 md:mt-16">
           <motion.div
             style={{ y }}
-            className="bg-primary md:rounded-t-2xl duration-700 shadow-clg py-32 md:py-48"
-          ></motion.div>
+            className="bg-black md:rounded-t-2xl overflow-hidden duration-700 shadow-clg h-64 md:h-96"
+          >
+            <img
+              src={thumbnail}
+              alt={title}
+              className="object-cover h-full w-full block"
+            />
+          </motion.div>
         </motion.div>
       </div>
     </div>
