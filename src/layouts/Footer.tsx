@@ -31,9 +31,9 @@ export default function Footer() {
             alt="pattern-triangle"
             className="absolute -top-6 left-0 w-auto h-40 opacity-40 shadow-cmd group-hover:translate-x-5 duration-700"
           />
-          <div className="grid grid-cols-2 gap-8 border-b border-dark-border pb-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-b border-dark-border pb-20">
             <div className="flex flex-col gap-8">
-              <h2 className="text-5xl font-bold font-heading leading-snug">
+              <h2 className="text-4xl sm:text-5xl font-bold font-heading leading-snug">
                 The Future is Now, <br /> Old Man.
               </h2>
               <p className="pb-16">

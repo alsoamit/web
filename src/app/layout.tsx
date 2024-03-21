@@ -38,7 +38,7 @@ export default function RootLayout({
       className={`${inter.variable} ${fahkwang.variable} ${jetbrains_mono.variable} dark`}
     >
       <body
-        className={`${inter.className} overflow-x-hidden bg-white dark:bg-[#0E161A]`}
+        className={`${inter.className} overflow-x-hidden bg-white dark:bg-[#121316]`}
       >
         <RootProvider>{children}</RootProvider>
       </body>

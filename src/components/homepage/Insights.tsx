@@ -20,8 +20,14 @@ export default function Insights() {
 
   return (
     <>
-      <div className="c-container space-y-8  py-24" ref={gallery}>
-        <h2 className="text-left text-5xl font-bold font-heading text-white">
+      {/* <div className="gap-x-2 flex bg-[#121316]">
+        {Array.from(Array(60).keys()).map((i) => (
+          <div key={i} className="h-2 w-2 bg-black"></div>
+        ))}
+      </div> */}
+      <div className="border-t-4 border-dashed border-black bg-[#121316]"></div>
+      <div className="c-container space-y-8 py-24" ref={gallery}>
+        <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
           Insights
         </h2>
         <p className="max-w-2xl">
@@ -30,7 +36,7 @@ export default function Insights() {
           obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
           Inventore, ipsa dolorem.
         </p>
-        <div className="grid grid-cols-3 gap-12 py-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 py-8">
           <InsightsCard y={y} />
           <InsightsCard y={y2} />
           <InsightsCard y={y3} />
@@ -40,7 +46,7 @@ export default function Insights() {
         <Button>Read More</Button>
       </div>
       <motion.div className="relative mt-[100px]" style={{ height }}>
-        <motion.div className="circle absolute z-10 h-[1550%] w-[120%] bg-white dark:bg-[#0E161A] left-[-10%]"></motion.div>
+        <motion.div className="circle absolute z-10 h-[1550%] w-[120%] bg-white dark:bg-[#121316] left-[-10%]"></motion.div>
       </motion.div>
     </>
   );

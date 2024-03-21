@@ -17,10 +17,10 @@ export default function Testimonials() {
 
   return (
     <div
-      className="gallery dark:bg-[#0E161A] border-t border-b border-black/30"
+      className="gallery dark:bg-[#121316] border-t border-b border-black/30"
       ref={gallery}
     >
-      <div className="relative top-[-10vh] grid grid-cols-3 gap-8 c-container">
+      <div className="relative top-[-10vh] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 c-container overflow-hidden">
         <TestimonialColumn y={y} />
         <TestimonialColumn y={y2} />
         <TestimonialColumn y={y3} />
@@ -32,7 +32,7 @@ export default function Testimonials() {
 function TestimonialColumn({ y }: { y: MotionValue }) {
   return (
     <motion.div
-      className="space-y-6 relative h-full min-w-[250px] flex flex-col"
+      className="space-y-6 relative h-full min-w-[250px] flex flex-col overflow-hidden"
       style={{ y }}
     >
       {Array.from(Array(8).keys()).map((i) => (

@@ -23,12 +23,12 @@ export default function Services() {
 
   return (
     <div className="relative bg-gradient-to-t from-white/5 to-black/0 group">
-      <section className="c-container py-32 " ref={container}>
+      <section className="c-container md:py-32" ref={container}>
         <div className="scale-150 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.025)_0%,rgba(255,255,255,0)_60%)]"></div>
         {/* <motion.div className="absolute bottom-40 opacity-15" style={{ y }}>
         <ComputerDesktopIcon className="h-9" />
       </motion.div> */}
-        <div className="flex items-center">
+        <div className="flex flex-col md:flex-row gap-y-20 items-center">
           <div className="flex-1">
             <div className="relative">
               <img
@@ -40,7 +40,7 @@ export default function Services() {
                 <p className="font-mono text-xs text-primary pb-8">
                   JOIN THE AI REVOLUTION
                 </p>
-                <motion.h2 className="text-5xl font-bold font-heading text-white">
+                <motion.h2 className="text-4xl sm:text-5xl font-bold font-heading text-white">
                   Future-proof your company, or perish away
                   {/* Gateway to an ai centric future */}
                 </motion.h2>
@@ -56,7 +56,7 @@ export default function Services() {
               </div>
             </div>
           </div>
-          <div className="flex flex-1 justify-end">
+          <div className="flex flex-1 justify-end pb-28">
             <div className="flex flex-col gap-8 relative">
               <motion.div
                 className="absolute z-0 inset-6 p-8"
@@ -105,9 +105,9 @@ export default function Services() {
             </div>
           </div>
         </div>
-        <div className="col-span-2 flex justify-center pt-32">
+        {/* <div className="col-span-2 flex justify-center pt-32">
           <Cta>Get in touch</Cta>
-        </div>
+        </div> */}
       </section>
     </div>
   );

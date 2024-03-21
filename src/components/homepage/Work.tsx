@@ -5,9 +5,9 @@ import Button from "../buttons/Button";
 
 export default function Work() {
   return (
-    <div className="bg-black">
+    <div className="bg-black border-t-4 border-dashed border-[#121316]">
       <div className="c-container py-24 space-y-16">
-        <h2 className="text-left text-5xl font-bold font-heading text-white">
+        <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
           Work
         </h2>
         {Array.from(Array(3).keys()).map((i) => (
@@ -76,7 +76,7 @@ function WorkCard() {
   return (
     <div
       ref={container}
-      className="border sticky top-20 grid grid-cols-3 bg-[#0E161A] border-black/60 dark:border-white/20 rounded-xl overflow-hidden"
+      className="border sticky top-0 md:top-20 grid grid-cols-1 md:grid-cols-3 bg-[#121316] border-black/60 dark:border-white/20 md:rounded-xl overflow-hidden"
     >
       <div className="absolute inset-0 z-0 p-20">
         <motion.div
@@ -93,7 +93,7 @@ function WorkCard() {
         </motion.div>
       </div>
 
-      <div className="p-6 z-10 pt-16 space-y-5">
+      <div className="p-6 z-10 pt-12 md:pt-16 space-y-5">
         <h2 className="text-3xl font-mono text-white font-semibold">
           Syneurgy
         </h2>
@@ -107,11 +107,11 @@ function WorkCard() {
           <Button>View Project</Button>
         </div>
       </div>
-      <div className="z-10 col-span-2">
-        <motion.div className="pr-6 mt-16">
+      <div className="z-10 md:col-span-2">
+        <motion.div className="md:pr-6 mt-4 md:mt-16">
           <motion.div
             style={{ y }}
-            className="bg-primary rounded-t-2xl duration-700 shadow-clg py-48"
+            className="bg-primary md:rounded-t-2xl duration-700 shadow-clg py-32 md:py-48"
           ></motion.div>
         </motion.div>
       </div>
