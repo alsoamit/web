@@ -1,6 +1,6 @@
 import React from "react";
-import Cta from "../buttons/Cta";
-import { CardBody, CardContainer, CardItem } from "../cards/3DCard";
+import Cta from "@/components/buttons/Cta";
+import { CardBody, CardContainer, CardItem } from "@/components/cards/3DCard";
 import { FaAws } from "react-icons/fa";
 import { TbBrandNextjs } from "react-icons/tb";
 
