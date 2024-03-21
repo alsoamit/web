@@ -20,8 +20,7 @@ export default function Insights() {
 
   return (
     <>
-      <div className="border-t-4 border-dashed border-black bg-[#121316]"></div>
-      <div className="c-container space-y-8 py-24" ref={gallery}>
+      <div className="c-container space-y-8 pt-8 pb-24" ref={gallery}>
         <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
           Insights
         </h2>
@@ -39,12 +38,12 @@ export default function Insights() {
           </div>
         </div>
       </div>
-      <motion.div
+      {/* <motion.div
         className="relative mt-[100px] overflow-x-clip"
         style={{ height }}
       >
         <motion.div className="circle absolute z-10 h-[1550%] w-[120%] bg-white dark:bg-[#121316] left-[-10%]"></motion.div>
-      </motion.div>
+      </motion.div> */}
     </>
   );
 }
@@ -66,7 +65,9 @@ function InsightsCard({
         alt=""
         className={`w-full object-cover h-60 ${large ? "sm:h-96" : "md:h-60"}`}
       />
-      <h3 className="text-white font-semibold text-lg font-mono">
+      <h3
+        className={`text-white font-semibold font-mono ${large ? "text-lg md:text-3xl md:pb-6 md:pt-3" : "text-lg"}`}
+      >
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus?
       </h3>
       <p className={large ? "" : "md:hidden"}>
@@ -87,19 +88,21 @@ function InsightsCard({
           obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
           Inventore, ipsa dolorem.
         </p>
-        <p className="max-w-2xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-          voluptatum libero sequi debitis inventore cumque aspernatur quaerat
-          obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
-          obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
-          Inventore, ipsa dolorem.
-        </p>
       </div>
       {large ? (
-        <div className="pt-8 flex gap-3">
-          <Button>Read More</Button>
-          {/* <Button>View All</Button> */}
-        </div>
+        <>
+          <div className="pt-8 md:flex gap-3 hidden">
+            <Button>Read More</Button>
+            {/* <Button>View All</Button> */}
+          </div>
+          <Link
+            href={"#"}
+            className="flex md:hidden items-center gap-2 text-base pt-5"
+          >
+            Read More
+            <ArrowLongRightIcon className="h-5" />
+          </Link>
+        </>
       ) : (
         <Link href={"#"} className="flex items-center gap-2 text-base pt-5">
           Read More

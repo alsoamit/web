@@ -1,3 +1,5 @@
+import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+
 export const socials = (
   <>
     {/* <a
@@ -24,7 +26,7 @@ export const socials = (
 export default function Footer() {
   return (
     <footer className="space-y-6 pb-6 bg-black group text-white">
-      <section className="border-top pt-40 pb-20 overflow-hidden">
+      {/* <section className="border-top pt-40 pb-20 overflow-hidden">
         <div className="c-container relative">
           <img
             src="/assets/pattern-triangle.png"
@@ -43,29 +45,20 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </section>
-      <section className="flex flex-col items-center space-y-8 pb-12 c-container">
-        <h2 className="text-2xl text-center font-mono text-primary">
-          hello@alegance.io
+      </section> */}
+      <section className="flex items-center justify-between py-12 pt-20 c-container">
+        <h2 className="text-lg md:text-3xl text-center font-mono text-white">
+          hi@alegance.io
         </h2>
         <div className="flex items-center gap-4">
           {socials}
-          {/* <a
-            href={`https://www.instagram.com/kreativeamit/`}
-            className="p-2 rounded-full bg-white/10"
-          >
-            <FaInstagram className="text-xl text-white" />
+          <a href={`https://twitter.com/aleganceX`} className="p-2">
+            <FaTwitter className="text-lg md:text-3xl text-white" />
           </a>
-          <a
-            href={`https://stackoverflow.com/users/14785394/amit`}
-            className="p-2 rounded-full bg-white/10"
-          >
-            <FaStackOverflow className="text-xl text-white" />
-          </a> */}
+          <a href={`https://www.linkedin.com/company/alegance`} className="">
+            <FaLinkedin className="text-lg md:text-3xl text-white" />
+          </a>
         </div>
-      </section>
-      <section className="text-center text-xs c-container">
-        Crafted with ❤️ at <span className="text-primary">Alegance</span>
       </section>
     </footer>
   );

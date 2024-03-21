@@ -1,3 +1,6 @@
+import { IconType } from "react-icons";
+import { FaStopwatch } from "react-icons/fa";
+
 export interface IWorkItem {
   id: number;
   title: string;
@@ -6,7 +9,7 @@ export interface IWorkItem {
     link: string;
     action: (() => void) | null;
     content: string;
-    icon: React.ReactNode;
+    icon: IconType | undefined | null;
   };
   thumbnail: string;
 }
@@ -49,7 +52,7 @@ export const work: IWorkItem[] = [
       link: "#",
       action: null,
       content: "Coming Soon",
-      icon: null,
+      icon: FaStopwatch,
     },
     thumbnail:
       "https://s3-alpha.figma.com/hub/file/2343262697/04b9f8dd-a0de-4dec-9ff0-ba3d26f9de18-cover.png",

@@ -6,7 +6,7 @@ import { IWorkItem, work } from "@/config/work.config";
 
 export default function Work() {
   return (
-    <div className="bg-black border-t-4 border-dashed border-[#121316]">
+    <div className="bg-black">
       <div className="c-container py-24 space-y-16">
         <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
           Work
@@ -77,7 +77,7 @@ function WorkCard({ data }: { data: IWorkItem }) {
   return (
     <div
       ref={container}
-      className="border sticky top-0 md:top-20 grid grid-cols-1 md:grid-cols-3 bg-[#121316] border-black/60 dark:border-white/20 md:rounded-xl overflow-hidden"
+      className="border sticky top-0 md:top-20 grid grid-cols-1 md:grid-cols-3 bg-[#121316]/60 border-black/60 dark:border-white/20 md:rounded-xl overflow-hidden backdrop-blur-xl"
     >
       <div className="absolute inset-0 z-0 p-20">
         <motion.div
@@ -98,7 +98,7 @@ function WorkCard({ data }: { data: IWorkItem }) {
         <h2 className="text-3xl font-mono text-white font-semibold">{title}</h2>
         <p className="max-w-xs">{description}</p>
         <div className="pt-4">
-          <Button>{cta.content}</Button>
+          <Button icon={cta.icon}>{cta.content}</Button>
         </div>
       </div>
       <div className="z-10 md:col-span-2">

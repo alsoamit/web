@@ -23,7 +23,7 @@ export default function Services() {
 
   return (
     <div className="relative bg-gradient-to-t from-white/5 to-black/0 group">
-      <section className="c-container md:py-32" ref={container}>
+      <section className="c-container md:py-32 md:pb-48" ref={container}>
         <div className="scale-150 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.025)_0%,rgba(255,255,255,0)_60%)]"></div>
         {/* <motion.div className="absolute bottom-40 opacity-15" style={{ y }}>
         <ComputerDesktopIcon className="h-9" />
@@ -34,7 +34,7 @@ export default function Services() {
               <img
                 src="/assets/pattern-triangle.png"
                 alt="pattern-triangle"
-                className="absolute top-10 -left-8 w-auto h-40 opacity-40 shadow-cmd group-hover:translate-x-5 duration-700"
+                className="absolute top-10 -left-8 w-auto h-28 opacity-40 shadow-cmd group-hover:translate-x-5 duration-700"
               />
               <div className="space-y-4 max-w-xl">
                 <p className="font-mono text-xs text-primary pb-8">
@@ -49,48 +49,36 @@ export default function Services() {
                   voluptatum id eligendi ab distinctio amet. Lorem ipsum dolor
                   sit, amet consectetur adipisicing elit. Lorem, ipsum dolor.
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 </p>
-                <div className="pt-7">
+                <div className="pt-7 md:pt-16">
                   <Cta>Get in touch</Cta>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex flex-1 justify-end pb-28">
+          <div className="flex flex-1 pb-28 sm:pb-0 justify-end">
             <div className="flex flex-col gap-8 relative">
               <motion.div
                 className="absolute z-0 inset-6 p-8"
                 // style={{ scale }}
               >
-                <div className=" border-l-0 border-black/20 dark:border-white/30 h-full p-1 rounded relative">
-                  <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                    <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                      {" "}
+                {/* <div className=" border-l-0 border-black/20 dark:border-white/30 h-full p-1 rounded relative"> */}
+                <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
+                  {/* <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
                       <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                        {" "}
                         <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                          {" "}
                           <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                            {" "}
-                            <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                              {" "}
-                              {/* <div className="border border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                              {" "} */}
-                              <div className=" border-l-0 border-black/20 dark:border-white/30 h-full p-1 rounded">
-                                <img
-                                  src="/android-chrome-192x192.png"
-                                  className="h-6 w-auto absolute top-2 right-2"
-                                  alt="aws"
-                                />
-                              </div>
-                              {/* </div> */}
+                            <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded"> */}
+                  {/* <div className=" border-l-0 border-black/20 dark:border-white/30 h-full p-1 rounded"> */}
+                  {/* </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
+                      </div> */}
+                  {/* </div> */}
                 </div>
+                {/* </div> */}
               </motion.div>
               <ServiceCard
                 title="Web"
@@ -125,7 +113,7 @@ function ServiceCard({
   return (
     <motion.div
       style={{ scale }}
-      className="h-40 z-30 w-40 rounded-xl bg-white/30 dark:bg-white/10 dark:backdrop-blur-sm backdrop-blur-md shadow-clg dark:shadow-none border border-black/30 dark:border-white/10 flex justify-center items-center flex-col gap-4 relative"
+      className="h-40 z-30 w-40 rounded-xl bg-white/30 dark:bg-[#121316]/60 dark:backdrop-blur-sm backdrop-blur-sm shadow-clg dark:shadow-none border border-black/30 dark:border-white/10 flex justify-center items-center flex-col gap-4 relative"
     >
       <img
         src="/android-chrome-192x192.png"

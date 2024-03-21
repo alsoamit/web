@@ -1,3 +1,4 @@
+import Contact from "@/components/homepage/Contact";
 import Hero from "@/components/homepage/Hero";
 import Insights from "@/components/homepage/Insights";
 import Services from "@/components/homepage/Services";
@@ -13,8 +14,12 @@ export default function Home() {
         <Services />
       </div>
       <Testimonials />
-      <div className="min-h-screen bg-white dark:bg-black flex justify-center items-center flex-col gap-8"></div>
-      <Insights />
+      <div className="bg-black">
+        <Contact />
+      </div>
+      <div className="bg-black">
+        <Insights />
+      </div>
     </>
   );
 }
