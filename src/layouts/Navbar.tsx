@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Navbar() {
   return (
-    <section className="top-0 left-0 right-0 pt-2 z-50 bg-black">
+    <section className="top-0 left-0 right-0 pt-2 z-50 bg-transparent absolute">
       <div className="c-container">
         <div className="h-12 backdrop-blur-sm font-mono items-center flex justify-between z-50">
           <div className="flex items-center gap-2">

@@ -17,17 +17,12 @@ export default function Services() {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-200, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.45], [0.65, 1]);
-  const y3 = useTransform(scrollYProgress, [0, 0.45], [-80, 0]);
 
   return (
-    <div className="relative bg-gradient-to-t from-white/5 to-black/0 group">
+    <div className="relative bg-gradient-to-tl from-primary/5 to-black/0 group">
       <section className="c-container md:py-32 md:pb-48" ref={container}>
         <div className="scale-150 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.025)_0%,rgba(255,255,255,0)_60%)]"></div>
-        {/* <motion.div className="absolute bottom-40 opacity-15" style={{ y }}>
-        <ComputerDesktopIcon className="h-9" />
-      </motion.div> */}
         <div className="flex flex-col md:flex-row gap-y-20 items-center">
           <div className="flex-1">
             <div className="relative">
@@ -41,44 +36,30 @@ export default function Services() {
                   JOIN THE AI REVOLUTION
                 </p>
                 <motion.h2 className="text-4xl sm:text-5xl font-bold font-heading text-white">
-                  Future-proof your company, or perish away
-                  {/* Gateway to an ai centric future */}
+                  Utilize AI leverage before it&apos;s too late.
                 </motion.h2>
                 <p className="pt-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-                  voluptatum id eligendi ab distinctio amet. Lorem ipsum dolor
-                  sit, amet consectetur adipisicing elit. Lorem, ipsum dolor.
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Our combined expertise of Web, Cloud and AI has the potential
+                  to propel your business to new heights. Stay ahead of the
+                  curve by strategically integrating innovation and adaptation
+                  into your business strategy, securing your place in the future
+                  of industry.
                 </p>
-                <div className="pt-7 md:pt-16">
+                <p className="pt-3">
+                  Our combined expertise of Web, Cloud and AI has the potential
+                  to propel your business to new heights. Stay ahead of the
+                  curve by strategically integrating innovation and adaptation
+                </p>
+                <div className="pt-7 md:pt-6">
                   <Cta>Get in touch</Cta>
                 </div>
               </div>
             </div>
           </div>
-          <div className="flex flex-1 pb-28 sm:pb-0 justify-end">
+          <div className="flex flex-1 pb-28 sm:pb-0 justify-center md:justify-end">
             <div className="flex flex-col gap-8 relative">
-              <motion.div
-                className="absolute z-0 inset-6 p-8"
-                // style={{ scale }}
-              >
-                {/* <div className=" border-l-0 border-black/20 dark:border-white/30 h-full p-1 rounded relative"> */}
-                <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                  {/* <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                      <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                        <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                          <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded">
-                            <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded"> */}
-                  {/* <div className=" border-l-0 border-black/20 dark:border-white/30 h-full p-1 rounded"> */}
-                  {/* </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div> */}
-                  {/* </div> */}
-                </div>
-                {/* </div> */}
+              <motion.div className="absolute z-0 inset-6 p-8">
+                <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded"></div>
               </motion.div>
               <ServiceCard
                 title="Web"
@@ -86,16 +67,13 @@ export default function Services() {
                 Icon={ComputerDesktopIcon}
               />
               <div className="flex gap-8">
-                <span className="block h-40 w-40" />
+                <span className="block h-32 md:h-40 w-32 md:w-40" />
                 <ServiceCard title="AI" Icon={CpuChipIcon} scale={scale} />
               </div>
               <ServiceCard title="Cloud" Icon={CloudIcon} scale={scale} />
             </div>
           </div>
         </div>
-        {/* <div className="col-span-2 flex justify-center pt-32">
-          <Cta>Get in touch</Cta>
-        </div> */}
       </section>
     </div>
   );
@@ -113,7 +91,7 @@ function ServiceCard({
   return (
     <motion.div
       style={{ scale }}
-      className="h-40 z-30 w-40 rounded-xl bg-white/30 dark:bg-[#121316]/60 dark:backdrop-blur-sm backdrop-blur-sm shadow-clg dark:shadow-none border border-black/30 dark:border-white/10 flex justify-center items-center flex-col gap-4 relative"
+      className="h-32 md:h-40 z-30 w-32 md:w-40 rounded-xl bg-white/30 dark:bg-[#121316]/60 dark:backdrop-blur-sm backdrop-blur-sm shadow-clg dark:shadow-none border border-black/30 dark:border-white/10 flex justify-center items-center flex-col gap-2 md:gap-4 relative"
     >
       <img
         src="/android-chrome-192x192.png"

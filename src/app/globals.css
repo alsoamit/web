@@ -4,7 +4,7 @@
 
 body {
   font-family: var(--font-inter);
-  @apply text-sm text-black/70 dark:text-white/70;
+  @apply text-sm text-black/70 dark:text-white/80 leading-relaxed;
 }
 
 .c-cta {

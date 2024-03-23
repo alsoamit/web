@@ -2,7 +2,7 @@ import Contact from "@/components/homepage/Contact";
 import Hero from "@/components/homepage/Hero";
 import Insights from "@/components/homepage/Insights";
 import Services from "@/components/homepage/Services";
-import Testimonials from "@/components/homepage/Testimonials";
+// import Testimonials from "@/components/homepage/Testimonials";
 import Work from "@/components/homepage/Work";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       <div className="bg-black">
         <Services />
       </div>
-      <Testimonials />
+      {/* <Testimonials /> */}
       <div className="bg-black">
         <Contact />
       </div>

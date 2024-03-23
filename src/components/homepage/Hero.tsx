@@ -6,19 +6,17 @@ import { TbBrandNextjs } from "react-icons/tb";
 
 export default function Hero() {
   return (
-    <div className="relative bg-black pb-8 md:pb-40">
-      {/* <div className="absolute top-0 right-0 left-0 hidden md:block h-40 bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-sm"></div> */}
-      {/* <div className="absolute bottom-0 right-0 left-0 h-40 hidden md:block bg-gradient-to-t from-white/5 to-white/0 backdrop-blur-sm"></div> */}
+    <div className="relative bg-black md:bg-[url(/assets/gradient.png)] bg-center bg-no-repeat pb-0 md:pb-20">
       <div className="c-container">
-        <div className="space-y-8 pb-0 pt-20 md:pt-60">
+        <div className="space-y-8 pb-0 pt-28 md:pt-44">
           <h1 className="text-4xl sm:text-4xl text-center md:text-6xl font-heading text-white">
             Crafting top-tier, AI-centric Webapps
           </h1>
           <p className="font-body sm:text-base text-white/80 text-center max-w-2xl mx-auto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, cum
-            incidunt mollitia quae ullam animi ipsa, quod facere repudiandae eum
-            veniam ipsum placeat ad consectetur quia fugit officia. Qui, vero.
-            veniam ipsum placeat ad consectetur quia fugit officia.
+            An impactful team dedicated to helping startups succeed by
+            leveraging AI to create advanced web apps and cloud solutions. Our
+            goal is to future-proof your business and make it stand out in the
+            crowd.
           </p>
           <div className="flex justify-center pt-4 items-center">
             <Cta>Get in touch</Cta>
@@ -44,7 +42,7 @@ export default function Hero() {
               translateZ="10"
               className="col-span-6 hidden sm:block h-full w-full"
             >
-              <div className="bg-[#121316] rounded-lg h-96 w-full"></div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-lg h-96 w-full p-4"></div>
             </CardItem>
             <div className="h-full w-full gap-4 col-span-6 sm:col-span-3 grid grid-cols-2">
               <CardItem

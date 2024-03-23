@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLongRightIcon, ArrowRightIcon } from "@heroicons/react/16/solid";
+import { ArrowLongRightIcon } from "@heroicons/react/16/solid";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import React, { useRef } from "react";
@@ -13,22 +13,20 @@ export default function Insights() {
     offset: ["start end", "end start"],
   });
 
-  const height = useTransform(scrollYProgress, [0.2, 0.8], [50, 0]);
   const y = useTransform(scrollYProgress, [0, 0.3], [200, 0]);
   const y2 = useTransform(scrollYProgress, [0.2, 0.45], [200, 0]);
   const y3 = useTransform(scrollYProgress, [0.3, 0.55], [200, 0]);
 
   return (
     <>
-      <div className="c-container space-y-8 pt-8 pb-24" ref={gallery}>
+      <div className="c-container space-y-8 pt-8 pb-8 md:pb-24" ref={gallery}>
         <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
           Insights
         </h2>
         <p className="max-w-2xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro
-          voluptatum libero sequi debitis inventore cumque aspernatur quaerat
-          obcaecati culpa ratione voluptate, unde vitae suscipit autem, odio id.
-          Inventore, ipsa dolorem.
+          Explore our curated collection of three insightful and up-to-date tech
+          articles. Delve into recent trends, analyses, and facts that can
+          inform and inspire.
         </p>
         <div className="gap-12 py-8 flex flex-col md:flex-row">
           <InsightsCard y={y} large />

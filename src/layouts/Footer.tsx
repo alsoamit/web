@@ -47,9 +47,12 @@ export default function Footer() {
         </div>
       </section> */}
       <section className="flex items-center justify-between py-12 pt-20 c-container">
-        <h2 className="text-lg md:text-3xl text-center font-mono text-white">
+        <a
+          href="mailto:hi@alegance.io"
+          className="text-lg md:text-3xl text-center font-mono text-white"
+        >
           hi@alegance.io
-        </h2>
+        </a>
         <div className="flex items-center gap-4">
           {socials}
           <a href={`https://twitter.com/aleganceX`} className="p-2">
