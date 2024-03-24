@@ -6,7 +6,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 
 export default function Hero() {
   return (
-    <div className="relative bg-black md:bg-[url(/assets/gradient.png)] bg-center bg-no-repeat pb-0 md:pb-20">
+    <div className="relative bg-black bg-center bg-no-repeat pb-0 md:pb-20">
       <div className="c-container">
         <div className="space-y-8 pb-0 pt-28 md:pt-44">
           <h1 className="text-4xl sm:text-4xl text-center md:text-6xl font-heading text-white">

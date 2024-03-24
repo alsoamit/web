@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Cta from "@/components/buttons/Cta";
 import { MotionValue, useScroll, useTransform, motion } from "framer-motion";
 import {
@@ -8,8 +8,11 @@ import {
   ComputerDesktopIcon,
   CpuChipIcon,
 } from "@heroicons/react/16/solid";
+import CalendlyModal from "../models/CalendlyModal";
+import { CiClock1 } from "react-icons/ci";
 
 export default function Services() {
+  const [isOpen, setIsOpen] = useState(false);
   const container = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -21,6 +24,7 @@ export default function Services() {
 
   return (
     <div className="relative bg-gradient-to-tl from-primary/5 to-black/0 group">
+      <CalendlyModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <section className="c-container md:py-32 md:pb-48" ref={container}>
         <div className="scale-150 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.025)_0%,rgba(255,255,255,0)_60%)]"></div>
         <div className="flex flex-col md:flex-row gap-y-20 items-center">
@@ -51,7 +55,9 @@ export default function Services() {
                   curve by strategically integrating innovation and adaptation
                 </p>
                 <div className="pt-7 md:pt-6">
-                  <Cta>Get in touch</Cta>
+                  <Cta onClick={() => setIsOpen(true)} icon={CiClock1}>
+                    Schedule a Meeting
+                  </Cta>
                 </div>
               </div>
             </div>

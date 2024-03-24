@@ -1,11 +1,53 @@
-import React from "react";
-import Cta from "../buttons/Cta";
-import Button from "../buttons/Button";
+"use client";
+
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import Cta from "@/components/buttons/Cta";
+import Button from "@/components/buttons/Button";
 import { CiClock1 } from "react-icons/ci";
+import CalendlyModal from "@/components/models/CalendlyModal";
+import { AiOutlineSend } from "react-icons/ai";
+
+interface FormData {
+  name: string;
+  email: string;
+  company?: string;
+  phone?: string;
+  message?: string;
+}
 
 export default function Contact() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [error, setError] = useState("");
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>();
+
+  const onSubmit = async (data: FormData) => {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (response.ok) {
+        console.log("Form submitted successfully!");
+      } else {
+        console.error("Form submission failed!");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
   return (
     <div className="c-container pb-24 md:pt-24 space-y-6">
+      <CalendlyModal isOpen={isOpen} setIsOpen={setIsOpen} />
       <h2 className="text-left text-4xl sm:text-5xl font-bold font-heading text-white">
         Let&apos;s Talk
       </h2>
@@ -25,41 +67,46 @@ export default function Contact() {
             a time that works for you, and let&apos;s discuss how we can help
             you achieve your goals. We look forward to meeting with you soon!
           </p>
-          <Button>Schedule</Button>
+          <Button icon={CiClock1} onClick={() => setIsOpen(true)}>
+            Schedule
+          </Button>
           <div className="md:py-40"></div>
         </div>
         <div className="sm:px-6">
-          <form action="#" className="space-y-6 font-mono">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-6 font-mono"
+          >
             <h3 className="md:pt-20 text-white font-mono">
               Get a personalized proposal!
             </h3>
-            <div className="">
+            <div>
               <input
                 className="c-input"
                 type="text"
                 id="fullname"
-                name="fullname"
                 placeholder="Full Name"
-                required
+                {...register("name", { required: true })}
               />
+              {errors.name && <span>This field is required</span>}
             </div>
             <div>
               <input
                 className="c-input"
                 type="email"
                 id="email"
-                name="email"
                 placeholder="Email"
-                required
+                {...register("email", { required: true })}
               />
+              {errors.email && <span>This field is required</span>}
             </div>
             <div>
               <input
                 className="c-input"
                 type="text"
                 id="company"
-                name="company"
                 placeholder="Company"
+                {...register("company")}
               />
             </div>
             <div>
@@ -67,20 +114,20 @@ export default function Contact() {
                 className="c-input"
                 type="tel"
                 id="phone"
-                name="phone"
                 placeholder="Phone Number"
+                {...register("phone")}
               />
             </div>
             <div>
               <textarea
                 className="c-input h-40"
                 id="message"
-                name="message"
                 placeholder="Message"
+                {...register("message")}
               ></textarea>
             </div>
             <div className="pt-6">
-              <Cta>Submit</Cta>
+              <Cta icon={AiOutlineSend}>Submit</Cta>
             </div>
           </form>
         </div>

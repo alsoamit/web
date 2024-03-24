@@ -1,15 +1,22 @@
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid";
 import React from "react";
+import { IconType } from "react-icons";
 
 interface ICtaProps extends React.HTMLAttributes<HTMLButtonElement> {
-  icon?: React.ReactNode;
+  icon?: IconType;
+  onClick?: () => void;
 }
 
-export default function Cta({ children, icon, ...props }: ICtaProps) {
+export default function Cta({
+  children,
+  onClick,
+  icon: Icon,
+  ...props
+}: ICtaProps) {
   return (
-    <button className="c-cta" {...props}>
+    <button onClick={onClick} type="submit" className="c-cta" {...props}>
       {children}
-      {icon ? icon : <ArrowUpRightIcon className="h-5 w-5" />}
+      {Icon ? <Icon /> : <ArrowUpRightIcon className="h-5 w-5" />}
     </button>
   );
 }

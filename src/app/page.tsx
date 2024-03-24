@@ -10,10 +10,9 @@ export default function Home() {
     <>
       <Hero />
       <Work />
-      <div className="bg-black">
+      <div className="bg-black overflow-x-hidden">
         <Services />
       </div>
-      {/* <Testimonials /> */}
       <div className="bg-black">
         <Contact />
       </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 
 export default function Testimonials() {
   const gallery = useRef(null);

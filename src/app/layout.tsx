@@ -35,11 +35,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${fahkwang.variable} ${jetbrains_mono.variable} overflow-x-hidden dark`}
+      className={`${inter.variable} ${fahkwang.variable} ${jetbrains_mono.variable} w-full max-w-full dark`}
     >
-      <body
-        className={`${inter.className} overflow-x-hidden bg-white dark:bg-[#121316]`}
-      >
+      <body className={`${inter.className} w-full bg-black`}>
         <RootProvider>{children}</RootProvider>
       </body>
     </html>

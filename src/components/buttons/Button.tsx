@@ -10,16 +10,18 @@ const variants = {
 
 export default function Button({
   children,
+  onClick,
   icon: Icon,
   variant = "solid",
   ...props
 }: {
   children: React.ReactNode;
+  onClick?: () => void;
   variant?: "outline" | "solid" | "link";
   icon?: IconType | null;
 }) {
   return (
-    <button className={`${variants[variant]} `} {...props}>
+    <button onClick={onClick} className={`${variants[variant]} `} {...props}>
       {children}
       {Icon ? <Icon /> : <ArrowUpRightIcon className="h-5 w-5" />}
     </button>

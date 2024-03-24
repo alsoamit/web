@@ -55,3 +55,18 @@ body {
 .c-input {
   @apply bg-transparent hover:outline-none focus:outline-none active:outline-none border-white/30 focus:border-primary transition-all border-2 px-3 py-3 text-white w-full block;
 }
+
+.c-scrollbar *::-webkit-scrollbar {
+  width: 12px;
+  background-color: #121316;
+}
+.c-scrollbar *::-webkit-scrollbar-track {
+  background-color: #121316;
+}
+.c-scrollbar *::-webkit-scrollbar-thumb {
+  background-color: #5973db;
+  border-radius: 6px;
+}
+.c-scrollbar *::-webkit-scrollbar-thumb:hover {
+  background-color: #405cb1;
+}
