@@ -10,6 +10,18 @@ import {
 } from "@heroicons/react/16/solid";
 import CalendlyModal from "../models/CalendlyModal";
 import { CiClock1 } from "react-icons/ci";
+import {
+  TbBrandGraphql,
+  TbBrandNextjs,
+  TbBrandTailwind,
+  TbBrandThreejs,
+  TbBrandTypescript,
+} from "react-icons/tb";
+import { FaAws, FaDocker, FaPython } from "react-icons/fa";
+import { BiLogoKubernetes } from "react-icons/bi";
+import { SiOpencv, SiPytorch } from "react-icons/si";
+import { HiCloud, HiOutlineCloud, HiOutlineCpuChip } from "react-icons/hi2";
+import { CgWebsite } from "react-icons/cg";
 
 export default function Services() {
   const [isOpen, setIsOpen] = useState(false);
@@ -67,16 +79,24 @@ export default function Services() {
               <motion.div className="absolute z-0 inset-6 p-8">
                 <div className="border border-l-0 border-dashed border-black/20 dark:border-white/30 h-full p-1 rounded"></div>
               </motion.div>
-              <ServiceCard
-                title="Web"
-                scale={scale}
-                Icon={ComputerDesktopIcon}
-              />
+              <ServiceCard title="Web" scale={scale} Icon={CgWebsite}>
+                <TbBrandNextjs className="h-9 w-auto absolute top-0 right-0 translate-x-1/2 -translate-y-1/2" />
+                <TbBrandGraphql className="h-6 text-pink-400 w-auto absolute top-6 left-8 -translate-x-1/2 -translate-y-1/2" />
+                <TbBrandThreejs className="h-7 w-auto absolute bottom-0 -translate-x-1/2 translate-y-1/2" />
+              </ServiceCard>
               <div className="flex gap-8">
                 <span className="block h-32 md:h-40 w-32 md:w-40" />
-                <ServiceCard title="AI" Icon={CpuChipIcon} scale={scale} />
+                <ServiceCard title="AI" Icon={HiOutlineCpuChip} scale={scale}>
+                  <SiOpencv className="h-6 w-auto absolute top-0 right-0 translate-x-1/2 -translate-y-1/2" />
+                  <SiPytorch className="h-9 text-pink-600 w-auto absolute top-6 left-8 -translate-x-1/2 -translate-y-1/2" />
+                  <FaPython className="h-7 w-auto absolute bottom-0 -translate-x-1/2 translate-y-1/2" />
+                </ServiceCard>
               </div>
-              <ServiceCard title="Cloud" Icon={CloudIcon} scale={scale} />
+              <ServiceCard title="Cloud" Icon={HiCloud} scale={scale}>
+                <FaDocker className="h-8 text-blue-400 w-auto absolute top-16 right-0 translate-x-1/2 -translate-y-1/2" />
+                <FaAws className="h-10 w-auto text-orange-400 absolute -top-1 left-8 -translate-x-1/2 -translate-y-1/2" />
+                <BiLogoKubernetes className="h-7 w-auto absolute bottom-0 -translate-x-1/2 translate-y-1/2" />
+              </ServiceCard>
             </div>
           </div>
         </div>
@@ -89,32 +109,20 @@ function ServiceCard({
   scale,
   Icon,
   title,
+  children,
 }: {
   title: string;
   Icon: any;
   scale: MotionValue;
+  children: React.ReactNode;
 }) {
   return (
     <motion.div
       style={{ scale }}
       className="h-32 md:h-40 z-30 w-32 md:w-40 rounded-xl bg-white/30 dark:bg-[#121316]/60 dark:backdrop-blur-sm backdrop-blur-sm shadow-clg dark:shadow-none border border-black/30 dark:border-white/10 flex justify-center items-center flex-col gap-2 md:gap-4 relative"
     >
-      <img
-        src="/android-chrome-192x192.png"
-        className="h-9 w-auto absolute top-0 right-0 translate-x-1/2 -translate-y-1/2"
-        alt="aws"
-      />
-      <img
-        src="/android-chrome-192x192.png"
-        className="h-6 w-auto absolute top-6 left-8 -translate-x-1/2 -translate-y-1/2"
-        alt="aws"
-      />
-      <img
-        src="/android-chrome-192x192.png"
-        className="h-7 w-auto absolute bottom-0 -translate-x-1/2 translate-y-1/2"
-        alt="aws"
-      />
-      <Icon className="h-14" />
+      {children}
+      <Icon className="text-5xl" />
       <h4 className="font-mono text-xs">{title}</h4>
     </motion.div>
   );
