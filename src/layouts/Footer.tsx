@@ -1,4 +1,4 @@
-import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export const socials = (
   <>

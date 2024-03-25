@@ -16,7 +16,7 @@ body {
 }
 
 .c-btn-outline {
-  @apply h-9 bg-transparent border border-white/10 hover:bg-white font-medium rounded-full gap-2 p-2 px-6 whitespace-nowrap text-white hover:text-black flex justify-center items-center text-sm min-w-[100px] shadow-csm hover:shadow-cmd transition-all;
+  @apply h-9 bg-black border border-white/10 hover:bg-white font-medium rounded-full gap-2 p-2 px-6 whitespace-nowrap text-white hover:text-black flex justify-center items-center text-sm min-w-[100px] shadow-csm hover:shadow-cmd transition-all;
 }
 
 .c-container {

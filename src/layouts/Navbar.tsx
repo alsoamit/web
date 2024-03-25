@@ -1,21 +1,22 @@
 import Button from "@/components/buttons/Button";
+import Link from "next/link";
 import React from "react";
 
 export default function Navbar() {
   return (
-    <section className="top-0 left-0 right-0 pt-2 z-50 bg-transparent absolute">
+    <section className="top-0 left-0 right-0 pt-2 z-50 absolute">
       <div className="c-container">
-        <div className="h-12 backdrop-blur-sm font-mono items-center flex justify-between z-50">
-          <div className="flex items-center gap-2">
+        <div className="h-12 font-mono items-center flex justify-between z-50">
+          <Link href={"/"} className="flex items-center gap-2">
             <img
               src="/android-chrome-192x192.png"
               alt="alegance"
               className="h-7 w-7 rounded-full"
             />
-            <p className="font-semibold text-base sm:text-lg text-white">
+            <span className="font-semibold text-base sm:text-lg text-white">
               Alegance
-            </p>
-          </div>
+            </span>
+          </Link>
           <div className="flex">
             <Button variant="outline">Contact</Button>
           </div>
